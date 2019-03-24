@@ -22,8 +22,6 @@ class groupChat extends Controller
 
      public function groupsend(request $request)
     {
-
-
         $user=User::find(Auth::id());
         $this->save_message($request);
         event(new groupevent($request->chatmessage,$user->name));
